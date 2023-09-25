@@ -39,13 +39,15 @@ class TaggedItem(BaseModel):
     native_country: str = Field(alias='native-country', examples=['United-States'])
 
 
-# load model
-model = joblib.load('model/model.pkl')
-encoder = joblib.load('model/encoder.pkl')
-lb = joblib.load('model/lb.pkl')
-
 # create app
 app = FastAPI()
+
+@app.on_event("startup")
+async def startup_event(): 
+    global model, encoder, lb
+    model = joblib.load('model/model.pkl')
+    encoder = joblib.load('model/encoder.pkl')
+    lb = joblib.load('model/lb.pkl')
 
 @app.get('/')
 async def hello():

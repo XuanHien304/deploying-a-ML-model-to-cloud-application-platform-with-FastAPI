@@ -34,16 +34,27 @@ The model was trained on a dataset obtained from the UCI Machine Learning Reposi
 The training data underwent preprocessing steps that included handling missing values, encoding categorical features, and splitting the data into training and validation sets.
 ## Evaluation Data
 
-The evaluation data is a subset of the same dataset used for training. It was reserved for model evaluation to assess its generalization performance.
+The evaluation data is a subset of the same dataset used for training. Here, I split the data to training set and evaluation set with the proportion as 80/20. It was reserved for model evaluation to assess its generalization performance.
+
 
 ## Metrics
+**Evaluation Metrics**:
 
-The model was evaluated on the following metrics: Precision: 0.73. Recall: 0.64. Fbeta: 0.68.
+- Precision: The ratio of true positive predictions to the total predicted positives.
+- Recall: The ratio of true positive predictions to the total actual positives.
+- F-beta: The weight harmonic of precision and recall.
 
+**Model Performance**:
+
+- Precision: 0.73
+- Recall: 0.64
+- F1-beta: 0.68
 
 ## Ethical Considerations
 - The dataset used for training and evaluation is anonymized and does not contain personally identifiable information (PII).
 
 - Fairness considerations were made to ensure the model does not discriminate against any demographic group.
+
+- There is an obvious difference result among all the race feature.
 ## Caveats and Recommendations
 Consider incorporating additional features or external data sources to improve predictive accuracy
