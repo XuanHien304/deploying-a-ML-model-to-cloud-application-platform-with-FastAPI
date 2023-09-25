@@ -5,7 +5,7 @@ Date: 2023/09/12
 
 import requests
 
-url = ''
+url = 'https://deploying-fastapi.onrender.com/prediction'
 
 input_data = {
     "age": 31,
@@ -28,4 +28,4 @@ req = requests.post(url, json=input_data)
 assert req.status_code == 200
 
 print('Status code:', req.status_code)
-print('')
+print('Model Inference:', req.json())
